@@ -1,772 +1,958 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arnab Sen Antu | AI & Computer Vision</title>
-    <meta
-      name="description"
-      content="Premium portfolio of Arnab Sen Antu, a Software Engineering graduate focused on AI, Deep Learning, and Computer Vision."
-    />
-    <style>
-      :root {
-        --bg: #07111d;
-        --bg-2: #0d1727;
-        --panel: rgba(15, 23, 38, 0.9);
-        --panel-strong: #111b2b;
-        --panel-soft: rgba(21, 31, 46, 0.85);
-        --text: #ebf3ff;
-        --muted: #a6b8d3;
-        --primary: #7dd3fc;
-        --secondary: #8b5cf6;
-        --accent: #34d399;
-        --warning: #fbbf24;
-        --danger: #f87171;
-        --border: rgba(148, 163, 184, 0.18);
-        --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-        --glow: 0 0 28px rgba(125, 211, 252, 0.22);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 24%),
-          radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.12), transparent 30%),
-          linear-gradient(180deg, var(--bg) 0%, #091625 100%);
-        color: var(--text);
-      }
+  <title>Arnab Sen Antu | AI & Computer Vision</title>
+  <meta
+    name="description"
+    content="Arnab Sen Antu — Software Engineering graduate exploring AI, Deep Learning, and Computer Vision."
+  />
 
-      a { color: inherit; text-decoration: none; }
-      img { max-width: 100%; display: block; }
+  <style>
+    :root {
+      --bg: #07111d;
+      --bg-2: #0b1625;
+      --panel: rgba(16, 25, 39, 0.92);
+      --panel-soft: rgba(20, 31, 48, 0.72);
+      --text: #edf5ff;
+      --muted: #a8b8ce;
+      --primary: #7dd3fc;
+      --secondary: #8b5cf6;
+      --accent: #34d399;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+      --glow: 0 0 30px rgba(125, 211, 252, 0.18);
+    }
 
-      .container {
-        width: min(1170px, calc(100% - 32px));
-        margin: 0 auto;
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        backdrop-filter: blur(16px);
-        background: rgba(7, 17, 29, 0.75);
-        border-bottom: 1px solid var(--border);
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      .nav {
-        height: 76px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(125, 211, 252, 0.1), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1), transparent 28%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      line-height: 1.6;
+    }
 
-      .brand {
-        font-size: 0.95rem;
-        letter-spacing: 0.18em;
-        font-weight: 800;
-        color: var(--text);
-      }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      .brand .dot { color: var(--primary); }
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-      .nav-links {
-        display: flex;
-        gap: 26px;
-        align-items: center;
-      }
+    /* Navigation */
 
-      .nav-links a {
-        color: var(--muted);
-        font-size: 0.92rem;
-        transition: color 0.2s ease;
-      }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 17, 29, 0.78);
+      backdrop-filter: blur(16px);
+    }
 
-      .nav-links a:hover { color: var(--text); }
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-      .nav-button {
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.02);
-        padding: 10px 18px;
-        border-radius: 999px;
-        color: var(--text);
-        font-weight: 600;
-      }
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
 
-      .hero { padding: 72px 0 40px; }
+    .brand span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-button {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 17px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .nav-button:hover {
+      border-color: rgba(125, 211, 252, 0.4);
+      box-shadow: var(--glow);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 84px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.07);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(52, 211, 153, 0.8);
+    }
+
+    h1 {
+      margin: 22px 0 20px;
+      max-width: 760px;
+      font-size: clamp(3rem, 7vw, 5.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 21px;
+      border-radius: 13px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #07111d;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: var(--glow);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    /* Profile panel */
+
+    .hero-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: linear-gradient(
+        180deg,
+        rgba(18, 29, 44, 0.92),
+        rgba(10, 18, 30, 0.96)
+      );
+      box-shadow: var(--shadow);
+    }
+
+    .profile-shell {
+      height: 330px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(125, 211, 252, 0.12),
+          rgba(139, 92, 246, 0.12)
+        ),
+        rgba(12, 20, 32, 0.9);
+    }
+
+    .profile-shell::before,
+    .profile-shell::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      filter: blur(25px);
+    }
+
+    .profile-shell::before {
+      top: -55px;
+      right: -40px;
+      background: rgba(125, 211, 252, 0.18);
+    }
+
+    .profile-shell::after {
+      bottom: -55px;
+      left: -40px;
+      background: rgba(139, 92, 246, 0.18);
+    }
+
+    .avatar {
+      position: relative;
+      z-index: 1;
+      width: 132px;
+      height: 132px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: rgba(7, 15, 26, 0.82);
+      font-size: 3.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-card {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .mini-card .label {
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .mini-card .value {
+      margin-top: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .kicker {
+      color: var(--primary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 7px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .about-box {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .about-box p {
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.9;
+    }
+
+    /* Highlights */
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card,
+    .tool-card,
+    .project-card,
+    .focus-card,
+    .contact-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card {
+      padding: 21px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stat-value {
+      margin-top: 9px;
+      font-size: 2.25rem;
+      font-weight: 800;
+    }
+
+    .stat-note {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .tool-card {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* Projects */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      padding: 23px;
+    }
+
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: linear-gradient(
+        135deg,
+        rgba(125, 211, 252, 0.1),
+        rgba(139, 92, 246, 0.15)
+      );
+      font-size: 1.35rem;
+    }
+
+    .project-card h3 {
+      margin: 17px 0 9px;
+      font-size: 1.3rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border: 1px solid rgba(125, 211, 252, 0.14);
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.06);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    /* Focus */
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .focus-card {
+      padding: 23px;
+    }
+
+    .focus-card small {
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .focus-card h3 {
+      margin: 10px 0 9px;
+      font-size: 1.2rem;
+    }
+
+    .focus-card p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .contact-card {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(
+        135deg,
+        rgba(125, 211, 252, 0.1),
+        rgba(139, 92, 246, 0.15)
+      );
+      font-size: 1.4rem;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+
+    .contact-card a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .contact-card a:hover {
+      color: var(--primary);
+    }
+
+    footer {
+      padding: 30px 0 55px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 980px) {
       .hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 32px;
-        align-items: center;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(125, 211, 252, 0.08);
-        border: 1px solid rgba(125, 211, 252, 0.2);
-        color: var(--primary);
-        padding: 10px 16px;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 18px rgba(52, 211, 153, 0.8);
-      }
-
-      h1 {
-        margin: 20px 0 18px;
-        font-size: clamp(2.7rem, 6vw, 5rem);
-        line-height: 0.98;
-        letter-spacing: -0.05em;
-      }
-
-      .gradient-text {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .lead {
-        color: var(--muted);
-        font-size: 1.06rem;
-        line-height: 1.8;
-        max-width: 660px;
-      }
-
-      .cta-row {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-top: 28px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 52px;
-        padding: 0 22px;
-        border-radius: 14px;
-        font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .btn:hover { transform: translateY(-1px); }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: #0a1220;
-        box-shadow: var(--glow);
-      }
-
-      .btn-secondary {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid var(--border);
-        color: var(--text);
-      }
-
-      .hero-card {
-        background: linear-gradient(180deg, rgba(18, 28, 42, 0.9), rgba(11, 18, 30, 0.96));
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        padding: 22px;
-        box-shadow: var(--shadow);
-      }
-
-      .profile-shell {
-        background:
-          linear-gradient(135deg, rgba(125, 211, 252, 0.16), rgba(139, 92, 246, 0.14)),
-          rgba(17, 25, 37, 0.9);
-        border: 1px solid var(--border);
-        border-radius: 22px;
-        height: 360px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .profile-shell::before,
-      .profile-shell::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(18px);
-      }
-
-      .profile-shell::before {
-        width: 180px;
-        height: 180px;
-        background: rgba(125, 211, 252, 0.18);
-        top: -30px;
-        right: -20px;
-      }
-
-      .profile-shell::after {
-        width: 180px;
-        height: 180px;
-        background: rgba(139, 92, 246, 0.18);
-        bottom: -30px;
-        left: -20px;
-      }
-
-      .avatar {
-        position: relative;
-        z-index: 1;
-        width: 140px;
-        height: 140px;
-        border-radius: 26px;
-        background: rgba(9, 15, 25, 0.8);
-        border: 1px solid var(--border);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-        box-shadow: var(--shadow);
-      }
-
-      .mini-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(120px, 1fr));
-        gap: 14px;
-        margin-top: 18px;
-      }
-
-      .mini-card {
-        padding: 16px 14px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--border);
-        border-radius: 15px;
-      }
-
-      .mini-card .label {
-        color: var(--muted);
-        font-size: 0.74rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .mini-card .value {
-        margin-top: 8px;
-        font-size: 1.1rem;
-        font-weight: 700;
-      }
-
-      section { padding: 28px 0; }
-
-      .section-head { margin-bottom: 20px; }
-
-      .kicker {
-        color: var(--primary);
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-size: 0.76rem;
-      }
-
-      h2 {
-        margin: 8px 0 0;
-        font-size: clamp(2rem, 4vw, 3rem);
-        letter-spacing: -0.04em;
-      }
-
-      .about-box {
-        background: rgba(17, 27, 40, 0.88);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 30px;
-        box-shadow: var(--shadow);
-      }
-
-      .about-box p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 1.04rem;
-        line-height: 1.9;
+        grid-template-columns: 1fr;
       }
 
       .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(150px, 1fr));
-        gap: 18px;
-      }
-
-      .stat-card, .tool-card, .project-card, .timeline-card, .contact-card {
-        background: rgba(16, 24, 37, 0.94);
-        border: 1px solid var(--border);
-        border-radius: 22px;
-        padding: 22px;
-        box-shadow: var(--shadow);
-      }
-
-      .stat-label {
-        color: var(--muted);
-        font-size: 0.76rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .stat-value {
-        font-size: clamp(1.9rem, 4vw, 2.7rem);
-        font-weight: 800;
-        margin-top: 12px;
-      }
-
-      .stat-note {
-        margin-top: 8px;
-        color: var(--muted);
-        font-size: 0.9rem;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(150px, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .tool-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 120px;
-        text-align: center;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        color: var(--text);
-      }
-
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(220px, 1fr));
-        gap: 22px;
-      }
-
-      .project-card {
-        display: flex;
-        flex-direction: column;
-        min-height: 280px;
-      }
-
-      .icon-box {
-        width: 56px;
-        height: 56px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        background: linear-gradient(135deg, rgba(125, 211, 252, 0.14), rgba(139, 92, 246, 0.18));
-        border: 1px solid var(--border);
-      }
-
-      .project-card h3 {
-        margin: 18px 0 10px;
-        font-size: 1.4rem;
-        letter-spacing: -0.02em;
-      }
-
-      .project-card p {
-        color: var(--muted);
-        line-height: 1.8;
-        margin: 0;
-      }
-
-      .chip-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: auto;
-        padding-top: 18px;
-      }
-
-      .chip {
-        background: rgba(125, 211, 252, 0.08);
-        border: 1px solid rgba(125, 211, 252, 0.14);
-        color: var(--primary);
-        border-radius: 999px;
-        padding: 8px 12px;
-        font-size: 0.76rem;
-        font-weight: 700;
-      }
-
-      .timeline {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(220px, 1fr));
-        gap: 18px;
-      }
-
-      .timeline-card {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .timeline-card::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto auto 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-      }
-
-      .timeline-card small {
-        color: var(--muted);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .timeline-card h4 {
-        margin: 12px 0 10px;
-        font-size: 1.2rem;
-      }
-
-      .timeline-card p {
-        color: var(--muted);
-        line-height: 1.7;
-        margin: 0;
-      }
-
+      .project-grid,
+      .focus-grid,
       .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-        gap: 18px;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 22px, 1160px);
       }
 
-      .contact-card { text-align: center; }
-
-      .contact-card .contact-icon {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 14px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(139, 92, 246, 0.18));
-        border: 1px solid var(--border);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.6rem;
+      .nav {
+        height: 64px;
       }
 
-      .contact-card h4 {
-        margin: 0 0 10px;
-        font-size: 1.08rem;
+      .nav-links {
+        display: none;
       }
 
-      .contact-card a {
-        color: var(--text);
-        font-weight: 600;
-        word-break: break-word;
+      .nav-button {
+        padding: 8px 13px;
       }
 
-      footer {
-        padding: 32px 0 64px;
-        color: var(--muted);
-        text-align: center;
-        font-size: 0.96rem;
+      .hero {
+        padding-top: 60px;
       }
 
-      @media (max-width: 980px) {
-        .hero-grid { grid-template-columns: 1fr; }
-        .stats-grid { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
-        .skills-grid { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
-        .project-grid, .timeline, .contact-grid { grid-template-columns: 1fr; }
+      h1 {
+        font-size: clamp(2.7rem, 15vw, 4.2rem);
       }
 
-      @media (max-width: 640px) {
-        .nav-links { display: none; }
-        .cta-row { flex-direction: column; }
-        .btn { width: 100%; }
-        .stats-grid, .skills-grid { grid-template-columns: 1fr; }
-        .brand { letter-spacing: 0.08em; }
+      .cta-row {
+        flex-direction: column;
       }
-    </style>
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container nav">
-        <div class="brand"><span class="dot">◈</span> ARNAB</div>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#stats">Stats</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="nav-button" href="mailto:arnabsen496@gmail.com">Hire Me</a>
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-shell {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <span>◈</span> ARNAB
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#focus">Focus</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-button" href="mailto:arnabsen496@gmail.com">
+        Get in touch
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">AI · Deep Learning · Computer Vision</span>
+
+          <h1>
+            Building with
+            <span class="gradient-text">AI and software.</span>
+          </h1>
+
+          <p class="lead">
+            I’m <strong>Arnab Sen Antu</strong>, a Software Engineering graduate from
+            Shahjalal University of Science and Technology. I’m interested in
+            Artificial Intelligence, Deep Learning, and Computer Vision, with a
+            particular interest in efficient models for understanding images and videos.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="profile-shell">
+            <div class="avatar">🤖</div>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="label">Location</div>
+              <div class="value">Chittagong, Bangladesh</div>
+            </div>
+
+            <div class="mini-card">
+              <div class="label">Focus</div>
+              <div class="value">AI / Computer Vision</div>
+            </div>
+
+            <div class="mini-card">
+              <div class="label">Interests</div>
+              <div class="value">Deep Learning / 3D Vision</div>
+            </div>
+
+            <div class="mini-card">
+              <div class="label">Status</div>
+              <div class="value">Open to opportunities</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <span class="eyebrow">AI • Deep Learning • Computer Vision</span>
-            <h1>
-              Building <span class="gradient-text">intelligent systems</span> for real impact.
-            </h1>
-            <p class="lead">
-              I am <strong>Arnab Sen Antu</strong>, a Software Engineering graduate passionate about
-              Artificial Intelligence, Deep Learning, and Computer Vision. I explore efficient
-              models for image and video understanding and build practical AI applications that
-              solve meaningful real-world problems.
-            </p>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
 
-            <div class="cta-row">
-              <a class="btn btn-primary" href="#projects">View Projects</a>
-              <a class="btn btn-secondary" href="mailto:arnabsen496@gmail.com">Get In Touch</a>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <div class="profile-shell">
-              <div class="avatar">🤖</div>
-            </div>
-
-            <div class="mini-grid">
-              <div class="mini-card">
-                <div class="label">Location</div>
-                <div class="value">Chittagong</div>
-              </div>
-              <div class="mini-card">
-                <div class="label">Focus</div>
-                <div class="value">AI / CV</div>
-              </div>
-              <div class="mini-card">
-                <div class="label">Interests</div>
-                <div class="value">ML / 3D</div>
-              </div>
-              <div class="mini-card">
-                <div class="label">Status</div>
-                <div class="value">Open to work</div>
-              </div>
-            </div>
-          </div>
+        <div class="section-head">
+          <div class="kicker">About</div>
+          <h2>A software engineer exploring AI.</h2>
         </div>
-      </section>
 
-      <section id="about">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker">About</div>
-            <h2>Engineer with a passion for AI.</h2>
+        <div class="about-box">
+          <p>
+            I’m a Software Engineering graduate with a growing focus on machine
+            learning and computer vision. Most of my recent work has involved
+            image and video-based problems, from experimenting with deep learning
+            models to building small applications around them.
+            <br /><br />
+            I’m particularly interested in efficient deep learning — understanding
+            how models can become faster and lighter while still performing well.
+            Alongside AI, I enjoy working on software projects and learning new
+            technologies by building things.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section>
+      <div class="container">
+
+        <div class="section-head">
+          <div class="kicker">Highlights</div>
+          <h2>A few things about what I do.</h2>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-label">Focus</div>
+            <div class="stat-value">AI</div>
+            <div class="stat-note">Deep Learning · Computer Vision</div>
           </div>
 
-          <div class="about-box">
+          <div class="stat-card">
+            <div class="stat-label">Background</div>
+            <div class="stat-value">SWE</div>
+            <div class="stat-note">Software Engineering</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Interests</div>
+            <div class="stat-value">3D</div>
+            <div class="stat-note">Image · Video · Vision</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Approach</div>
+            <div class="stat-value">→</div>
+            <div class="stat-note">Learn · Build · Experiment · Improve</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="kicker">Tech Stack</div>
+          <h2>Tools I use and learn with.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="tool-card">Python</div>
+          <div class="tool-card">PyTorch</div>
+          <div class="tool-card">TensorFlow</div>
+          <div class="tool-card">Java</div>
+          <div class="tool-card">C / C++</div>
+          <div class="tool-card">JavaScript</div>
+          <div class="tool-card">React</div>
+          <div class="tool-card">Angular</div>
+          <div class="tool-card">Spring Boot</div>
+          <div class="tool-card">Machine Learning</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="kicker">Projects</div>
+          <h2>Things I’ve built.</h2>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div class="icon-box">💊</div>
+
+            <h3>Web-Based Prescription System</h3>
+
             <p>
-              I am a Software Engineering graduate with a strong interest in AI-driven innovation.
-              My work focuses on machine learning, deep learning, and computer vision, particularly
-              in efficient reasoning systems for images and videos. I enjoy creating tools and
-              applications that pair strong technical execution with practical value and user
-              experience.
+              A web application for creating and managing digital prescriptions,
+              built while exploring practical full-stack development and
+              document generation.
             </p>
-          </div>
+
+            <div class="chip-row">
+              <span class="chip">Next.js</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Web App</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="icon-box">⚡</div>
+
+            <h3>Pokedex</h3>
+
+            <p>
+              A small web project for browsing Pokémon data through an external
+              API, with a focus on simple navigation and a responsive interface.
+            </p>
+
+            <div class="chip-row">
+              <span class="chip">React</span>
+              <span class="chip">API</span>
+              <span class="chip">Frontend</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="icon-box">⛅</div>
+
+            <h3>Weather App</h3>
+
+            <p>
+              A weather application built around external API data, with a
+              straightforward interface for displaying current weather information.
+            </p>
+
+            <div class="chip-row">
+              <span class="chip">JavaScript</span>
+              <span class="chip">API</span>
+              <span class="chip">Web App</span>
+            </div>
+          </article>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="stats">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker">Highlights</div>
-            <h2>Progress in numbers.</h2>
-          </div>
+    <!-- Current Focus -->
+    <section id="focus">
+      <div class="container">
 
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-label">Core Interests</div>
-              <div class="stat-value">4+</div>
-              <div class="stat-note">AI, ML, CV, 3D Vision</div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-label">Tech Stack</div>
-              <div class="stat-value">10+</div>
-              <div class="stat-note">Languages & frameworks</div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-label">Projects</div>
-              <div class="stat-value">3</div>
-              <div class="stat-note">Built and refined</div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-label">Learning</div>
-              <div class="stat-value">∞</div>
-              <div class="stat-note">Always exploring</div>
-            </div>
-          </div>
+        <div class="section-head">
+          <div class="kicker">Current Focus</div>
+          <h2>What I’m working toward.</h2>
         </div>
-      </section>
 
-      <section id="skills">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker">Tech Stack</div>
-            <h2>Languages, frameworks, and tools.</h2>
-          </div>
+        <div class="focus-grid">
 
-          <div class="skills-grid">
-            <div class="tool-card">Python</div>
-            <div class="tool-card">PyTorch</div>
-            <div class="tool-card">TensorFlow</div>
-            <div class="tool-card">Java</div>
-            <div class="tool-card">C/C++</div>
-            <div class="tool-card">JavaScript</div>
-            <div class="tool-card">React</div>
-            <div class="tool-card">Angular</div>
-            <div class="tool-card">Spring Boot</div>
-            <div class="tool-card">ML</div>
-          </div>
+          <article class="focus-card">
+            <small>AI</small>
+            <h3>Artificial Intelligence</h3>
+            <p>
+              Learning more about machine learning and how AI systems can be
+              applied to practical problems.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <small>Modeling</small>
+            <h3>Deep Learning</h3>
+            <p>
+              Experimenting with neural networks and different approaches to
+              training and improving models.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <small>Vision</small>
+            <h3>Computer Vision</h3>
+            <p>
+              Working with image and video understanding, including gesture
+              recognition and efficient vision models.
+            </p>
+          </article>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="projects">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker">Portfolio</div>
-            <h2>Featured work.</h2>
-          </div>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
 
-          <div class="project-grid">
-            <article class="project-card">
-              <div class="icon-box">⚡</div>
-              <h3>Pokedex</h3>
-              <p>
-                A polished Pokémon discovery project designed to provide quick browsing, data-rich
-                cards, and a smooth user experience for exploring characters.
-              </p>
-              <div class="chip-row">
-                <span class="chip">React</span>
-                <span class="chip">API</span>
-                <span class="chip">UI</span>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="icon-box">⛅</div>
-              <h3>Weather App</h3>
-              <p>
-                A weather application with clear, readable cards and data presentation, highlighting
-                practical front-end design and real-world utility.
-              </p>
-              <div class="chip-row">
-                <span class="chip">JavaScript</span>
-                <span class="chip">API</span>
-                <span class="chip">Dashboard</span>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="icon-box">🛒</div>
-              <h3>Grocery Shop</h3>
-              <p>
-                A grocery shopping interface focused on clean layout, product exploration, and a
-                seamless digital commerce experience.
-              </p>
-              <div class="chip-row">
-                <span class="chip">Frontend</span>
-                <span class="chip">UX</span>
-                <span class="chip">Web App</span>
-              </div>
-            </article>
-          </div>
+        <div class="section-head">
+          <div class="kicker">Contact</div>
+          <h2>Want to talk?</h2>
         </div>
-      </section>
 
-      <section>
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker">Focus</div>
-            <h2>What I am exploring right now.</h2>
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <div class="contact-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <a
+              href="https://www.linkedin.com/in/arnab-sen-antu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              arnab-sen-antu
+            </a>
           </div>
 
-          <div class="timeline">
-            <div class="timeline-card">
-              <small>Research</small>
-              <h4>Artificial Intelligence</h4>
-              <p>
-                Building understanding around practical AI systems and how they can create real
-                value in modern products.
-              </p>
-            </div>
-
-            <div class="timeline-card">
-              <small>Modeling</small>
-              <h4>Deep Learning</h4>
-              <p>
-                Exploring neural networks for meaningful pattern recognition and intelligent
-                decision-making in data-heavy problems.
-              </p>
-            </div>
-
-            <div class="timeline-card">
-              <small>Vision</small>
-              <h4>Computer Vision</h4>
-              <p>
-                Studying image and video understanding, visual perception systems, and efficient
-                approaches for real-world applications.
-              </p>
-            </div>
+          <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <a href="mailto:arnabsen496@gmail.com">
+              arnabsen496@gmail.com
+            </a>
           </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">🐙</div>
+            <h3>GitHub</h3>
+            <a
+              href="https://github.com/ArnabSen123"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ArnabSen123
+            </a>
+          </div>
+
         </div>
-      </section>
 
-      <section id="contact">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker">Connect</div>
-            <h2>Let’s build something smart.</h2>
-          </div>
+        <p style="margin-top: 22px; color: var(--muted); text-align: center;">
+          I’m interested in software, AI, computer vision, research, and interesting things people are building.
+        </p>
 
-          <div class="contact-grid">
-            <div class="contact-card">
-              <div class="contact-icon">💼</div>
-              <h4>LinkedIn</h4>
-              <a href="https://www.linkedin.com/in/arnab-sen-antu/" target="_blank" rel="noreferrer">
-                arnab-sen-antu
-              </a>
-            </div>
+      </div>
+    </section>
 
-            <div class="contact-card">
-              <div class="contact-icon">✉️</div>
-              <h4>Email</h4>
-              <a href="mailto:arnabsen496@gmail.com">arnabsen496@gmail.com</a>
-            </div>
+  </main>
 
-            <div class="contact-card">
-              <div class="contact-icon">🐙</div>
-              <h4>GitHub</h4>
-              <a href="https://github.com/ArnabSen123" target="_blank" rel="noreferrer">
-                ArnabSen123
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  <footer>
+    © <span id="year"></span> Arnab Sen Antu · Software Engineering · AI & Computer Vision
+  </footer>
 
-    <footer>
-      © <span id="year"></span> Arnab Sen Antu — AI & Computer Vision
-    </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+</body>
 </html>
